@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GURU</title>
+    <style>
+        body{
+            margin: 0%;
+            width: 100vh;
+            height: 100vh;
+            font: 1em Inconsolata, monospace;
+             
+            background-color: black;
+        }
+        section{
+            width: 100vw;
+            margin-top: 1em;
+            display: flex;
+            
+            background-color: rgb(0, 0, 0);
+            
+        }
+        .cor{
+            color: rgb(20, 255, 78);
+            font-size: 1em;
+        }
+        
+        #resposta{
+            color: rgb(0, 0, 0);
+            font-size: 1em;
+        }
+        #cursor{
+            color:rgb(0, 0, 0);
+            animation-name: cursor;
+            animation-duration: 0.8s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes cursor {
+            
+            0% {color:rgb(20, 255, 78)}
+            100%   {color:rgb(0, 0, 0)}
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="cor">BirisBoros Ruindows [Version 10.0.19041.1415] </br>
+            (c) BirisBoros Corporation. All rights reserved.</div>
+        </section>
+    <section>
+        <div class="cor">C:\Guru></div>
+        
+    <div id="pergunta" class="cor"></div>
+    <div id="cursor">_</div>
+    </section>
+    <section>
+    <div id="resposta"></div>
+    </section>
+    <script>
+        let cursor = document.getElementById('cursor');
+        let guru=['?',' ','r','e','s','p','o','n','d','a',' ','e','s','s','a',' ','p','e','r','g','u','n','t','a',',',' ','a','g','o','r','a','!'];
+        let i=0;
+        let perg1=[];
+        let resp1=['C:','\\','Guru>'];
+        let pergunts3;
+        let textogeral = document.addEventListener('keydown', function(event){
+    console.log(event.key);
+    
+    let perg2=[event.key];
+    
+    let resp2=[event.key];
+    
+    let perg3 = perg2.toString().toUpperCase();
+    let resp3 = resp2.toString().toLowerCase();
+    
+    if (event.key=='Enter') {
+        document.getElementById("resposta").style.color = "rgb(20, 255, 78)";
+        cursor.removeAttribute('id');
+    }
+    if(event.keyCode == 32){
+        var respost2 = resp1.push(' ');
+        var pergunt2 = perg1.push(' ');
+    }
+    if ((resp2=='Shift') &&(perg2=='Shift')) {
+        
+        var index3 = resp2.indexOf("Shift");
+        resp2.splice(index, 1); 
+        var index4 = perg2.indexOf("Shift");
+        perg2.splice(index2, 1); 
+        }
+    if ((resp2=='Enter') &&(perg2=='Enter')) {
+        
+        var index3 = resp2.indexOf("Enter");
+        resp2.splice(index, 1); 
+        var index4 = perg2.indexOf("Enter");
+        perg2.splice(index2, 1); 
+        }
+    if ((resp2=='Backspace') &&(perg2=='Backspace')) {
+        
+       
+        var index4 = perg2.indexOf("Backspace");
+        perg2.splice(index2, 1);
+        perg1.pop(); 
+        }
+    if ((resp2=='CapsLock') &&(perg2=='CapsLock')) {
+        
+    var index = resp2.indexOf("CapsLock");
+    resp2.splice(index, 1); 
+    var index2 = perg2.indexOf("CapsLock");
+    perg2.splice(index2, 1); 
+    }
+
+    if ((resp2 != resp3)&&(event.keyCode != 32)) {
+            
+            var respost = resp1.push(resp2);
+            resp2 = resp1.join('');
+            document.getElementById("resposta").innerHTML = resp2;
+           
+            
+            
+    }
+    if ((resp2 != resp3)&&(event.keyCode != 32)&&(event.key !='Enter')) {
+            guru2=guru.slice(i,1);
+            guru2=guru.splice(0,1);
+            i=i+1;
+            pergunts3 = perg1.push(guru2);
+            pergunts2=perg1.join('');
+            pergunts2=pergunts2.toUpperCase();
+            document.getElementById("pergunta").innerHTML = pergunts2;
+            console.log(guru2);
+            console.log(i);
+    }
+    if ((resp2 != resp3)&&(event.keyCode == 32)) {
+            perg1.pop();
+            guru2=guru.slice(i,1);
+            guru2=guru.splice(0,1);
+            i=i+1;
+            pergunts3 = perg1.push(guru2);
+            pergunts2=perg1.join('');
+            pergunts2=pergunts2.toUpperCase();
+            document.getElementById("pergunta").innerHTML = pergunts2;
+            console.log(guru2);
+            console.log(i);
+    }
+    if ((perg2 != perg3)&&(event.keyCode != 32)) {
+        
+        var pergunts = perg1.push(perg2);
+        pergunts2=perg1.join('');
+        pergunts2=pergunts2.toUpperCase();
+        document.getElementById("pergunta").innerHTML = pergunts2;
+        
+        
+
+
+        
+}
+    
+    
+});
+
+       
+    </script>
+</body>
+</html>
